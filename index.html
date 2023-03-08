@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>HAPPY HOLI</h2>
+    <script>
+      let images = [
+        'url("../assets/clr01.png")',
+        'url("../assets/clr02.png")',
+        'url("../assets/clr03.png")',
+        'url("../assets/clr04.png")',
+        'url("../assets/clr05.png")',
+        'url("../assets/clr06.png")',
+        'url("../assets/clr07.png")',
+        'url("../assets/clr08.png")',
+        'url("../assets/clr09.png")',
+        'url("../assets/clr10.png")',
+        'url("../assets/clr11.png")',
+        'url("../assets/clr12.png")',
+        'url("../assets/clr13.png")',
+        'url("../assets/clr14.png")',
+        'url("../assets/clr15.png")',
+        'url("../assets/clr16.png")',
+      ];
+      let body = document.querySelector("body");
+      body.onclick = function (e) {
+        let x = e.pageX - e.target.offsetLeft;
+        let y = e.pageY - e.target.offsetLeft;
+
+        let splash = document.createElement("span");
+        splash.style.left = x + "px";
+        splash.style.top = y + "px";
+
+        let bg = images[Math.floor(Math.random() * images.length)];
+        splash.style.backgroundImage = bg;
+
+        this.appendChild(splash);
+
+        setTimeout(() => {
+          splash.remove();
+        }, 4000);
+      };
+    </script>
+  </body>
+</html>
